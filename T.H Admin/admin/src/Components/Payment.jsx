@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import styled from "styled-components";
 import axios from "axios";
+import './product.css';
 
 const Container = styled.div`
   width: 100%;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,9 +56,9 @@ const Payment = () => {
       <thead>
         <tr>
           <th>#</th>
-          <th>ID</th>
+          <th id="hide">ID</th>
           <th>UserName</th>
-          <th>Address</th>
+          <th id="hide">Address</th>
           <th>Contact No.</th>
           <th>Actions</th>
         </tr>
@@ -67,9 +67,9 @@ const Payment = () => {
         {news.map((items) => (
           <tr>
             <td>{b++}</td>
-            <td>{items._id}</td>
+            <td id="hide">{items._id}</td>
             <td>{items.username}</td>
-            <td>{items.address}</td>
+            <td id="hide">{items.address}</td>
             <td>{items.contact}</td>
             <td><span
                 class="material-symbols-outlined"

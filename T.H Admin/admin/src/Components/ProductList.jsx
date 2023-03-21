@@ -3,6 +3,10 @@ import Table from "react-bootstrap/Table";
 import styled from "styled-components";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
+import { mobile } from "../responsive";
+import { Tablet } from "../responsive";
+import { Pc } from "../responsive";
+import './product.css'
 
 const Container = styled.div`
   width: 100%;
@@ -10,11 +14,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  ${mobile({width:"auto"})}
 `;
 const H1 = styled.h1`
   margin: 50px 0px;
 `;
-
 const ProductList = () => {
   let navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -59,11 +63,11 @@ const ProductList = () => {
         <Table striped bordered hover variant="dark">
           <thead>
             <tr>
-              <th>#</th>
+              <th id="hide">#</th>
               <th>Title</th>
-              <th>Description</th>
-              <th>Categories</th>
-              <th>Size</th>
+              <th id="hide">Description</th>
+              <th id="hide">Categories</th>
+              <th id="hide">Size</th>
               <th>Color</th>
               <th>Price</th>
               <th>Actions</th>
@@ -72,11 +76,11 @@ const ProductList = () => {
           <tbody>
             {products.map((items) => (
               <tr>
-                <td>{a++}</td>
+                <td id="hide">{a++}</td>
                 <td>{items.title}</td>
-                <td>{items.desc}</td>
-                <td>{items.categories}</td>
-                <td>{items.size}</td>
+                <td id="hide">{items.desc}</td>
+                <td id="hide">{items.categories}</td>
+                <td id="hide">{items.size}</td>
                 <td>{items.color}</td>
                 <td>{items.price}</td>
                 <td>

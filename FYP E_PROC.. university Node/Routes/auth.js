@@ -74,7 +74,7 @@ router.post("/login", async (req, res) => {
     user.password,
     process.env.PASS_SEC
   );
-
+  const isAdmin = user.isAdmin;
   const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
   const inputPassword = req.body.password;
@@ -87,7 +87,7 @@ router.post("/login", async (req, res) => {
       process.env.JWT_SEC,
       { expiresIn: "3d" }
     );
-    res.status(200).json({ accessToken });
+    res.status(200).json({ accessToken,isAdmin });
   } else {
     res.status(401).json("no user found");
   }}else{

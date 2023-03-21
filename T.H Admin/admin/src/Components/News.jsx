@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import styled from "styled-components";
 import axios from "axios";
+import { mobile } from "../responsive";
+
 
 const Container = styled.div`
   width: 100%;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  ${mobile({width:"auto"})}
 `;
 const H1 = styled.h1`
   margin-bottom: 10px;

@@ -3,10 +3,10 @@ import Table from 'react-bootstrap/Table';
 import styled from 'styled-components';
 import axios from 'axios';
 import { Navigate, useNavigate } from "react-router-dom";
+import './product.css';
 
 const Container = styled.div`
 width: 100%;
-height: 60vh;
 display: flex;
 flex-direction: column;
 align-items:center;
@@ -66,7 +66,7 @@ const UserList = () => {
         <th>#</th>
         <th>User Name</th>
         <th>Email</th>
-        <th>Password</th>
+        <th id="hide">Password</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -76,7 +76,7 @@ const UserList = () => {
                 <td>{b++}</td>
                 <td>{items.username}</td>
                 <td>{items.email}</td>
-                <td>{items.password}</td>
+                <td id="hide">{items.password}</td>
                 <td>
                   <span class="material-symbols-outlined" style={{cursor:"pointer"}} id={items._id} onClick={updateUser}>edit</span>,
                   <span class="material-symbols-outlined" style={{cursor:"pointer"}} id={items._id} onClick={deleteUser}>delete</span>

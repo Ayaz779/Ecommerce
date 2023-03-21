@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { mobile } from "../responsive";
-// import { Tablet } from "../responsive";
-// import { Large } from "../responsive";
+import { mobile } from "../responsive";
+import { Tablet } from "../responsive";
+import { Pc } from "../responsive";
 import logo from "../Pics/logo.jpeg";
 
 const Container = styled.div`
@@ -14,36 +14,8 @@ const Wrapper = styled.div`
   padding: 0px 20px;
   display: flex;
   align-items: center;
+  ${mobile({flexDirection:"column"})}
 `;
-
-// const Left = styled.div`
-//   flex: 1;
-//   display: flex;
-//   align-items: center;
-//   ${mobile({ width: "50%", display: "inline-block" })}
-// `;
-// const Language = styled.span`
-//   font-style: 14px;
-//   cursor: pointer;
-//   ${mobile({ display: "none" })}
-// `;
-
-// const SearchContainer = styled.div`
-//   width: 100%;
-//   border: 2px solid black;
-//   display: flex;
-//   align-items: center;
-//   margin-left: 25px;
-//   ${mobile({ marginLeft: "5px" })}
-// `;
-// const Input = styled.input`
-//   border: none;
-//   font-size: 15px;
-//   width: 100%;
-//   :focus {
-//     outline: none !important;
-//   }
-// `;
 
 const Image = styled.img`
   width: 45px;
@@ -84,18 +56,6 @@ const Navbar = () => {
     <>
       <Container>
         <Wrapper>
-          {/* <Left>
-            <Language>EN</Language>
-            <SearchContainer>
-              <Input placeholder="Search" />
-              <Search
-                style={{
-                  color: "black",
-                  fontSize: 30,
-                }}
-              />
-            </SearchContainer>
-          </Left> */}
           <Image src={logo} />
           <Center>
             <Logo>
@@ -118,14 +78,9 @@ const Navbar = () => {
             </MenuItem> */}
             <MenuItem>
               <Link to={"/product"} style={{ textDecoration: "none" }}>
-              ADD_PRODUCTS
+                ADD_PRODUCTS
               </Link>
-            </MenuItem >
-            {/* <MenuItem >
-              <Link to={"/edit-product"} style={{ textDecoration: "none" }}>
-                EDIT_PRODUCTS
-              </Link>
-            </MenuItem> */}
+            </MenuItem>
           </Right>
         </Wrapper>
       </Container>
