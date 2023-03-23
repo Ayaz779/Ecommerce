@@ -66,6 +66,7 @@ const Addproducts = () => {
   const [color1, setColor] = useState("");
   const [color3, setColor2] = useState("");
   const [price1, setPrice] = useState("");
+  const [out1, setOut] = useState("");
   // category1.push(category4);
   var ref = [category1, category4];
   var ref1 = [size1, size3];
@@ -79,6 +80,7 @@ const Addproducts = () => {
     size: ref1,
     color: ref2,
     price: price1,
+    out: out1,
   };
   console.log(update);
   let navigate = useNavigate();
@@ -146,6 +148,10 @@ const Addproducts = () => {
             <Input
               placeholder="Price"
               onChange={(e) => setPrice(e.target.value)}
+            />
+            <Input
+              placeholder="Stock"
+              onChange={(e) => setOut(e.target.value)}
             />
             <Agreement>
               By creating an account, I consent to the processing of my personal
